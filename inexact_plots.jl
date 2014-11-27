@@ -1,10 +1,11 @@
-# Julia 0.2 RC1
+# inexact_plots.jl
+#
+# Julia 0.3.2
 # Created: 29.10.13
-# Last Edit: 31.10.13
+# Last Edit: 27.11.14
 
 using PyPlot
-
-close("all") # Close all currently open figures
+# http://matplotlib.org/examples/showcase/xkcd.html
 
 #################
 #  Create Data  #
@@ -19,7 +20,7 @@ end
 #  XKCD Plot #
 ##############
 xkcd() # Set to XKCD mode, based on the comic (hand drawn)
-fig = figure(figsize=(10,10))
+fig = figure("inexact_plots",figsize=(10,10))
 ax = axes()
 p = plot(x,y)
 ax[:set_ylim]([0.2,1.1])

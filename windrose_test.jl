@@ -1,9 +1,9 @@
-# Julia 0.2 RC1
-# Last Edit: 31.10.13
+# windrose_test.jl
+#
+# Julia 0.3.2
+# Last Edit: 27.11.14
 
 using PyPlot
-
-close("all") # Close all currently open figures
 
 #################
 #  Create Data  #
@@ -15,7 +15,7 @@ width = 2pi/length(theta) # Desired width of each bar in the bar plot
 ##########################
 ##  Windrose Line Plot  ##
 ##########################
-fig = figure(figsize=(10,10)) # Create a new figure
+fig = figure("windrose_line",figsize=(10,10)) # Create a new figure
 ax = axes(polar="true") # Create a polar axis
 title("Wind Rose - Line")
 p = plot(theta,r,linestyle="-",marker="None") # Basic line plot
@@ -29,7 +29,7 @@ fig[:canvas][:draw]() # Update the figure
 #########################
 ##  Windrose Bar Plot  ##
 #########################
-fig = figure(figsize=(10,10)) # Create a new figure
+fig = figure("windrose_bar",figsize=(10,10)) # Create a new figure
 ax = axes(polar="true") # Create a polar axis
 title("Wind Rose - Bar")
 b = bar(theta,r,width=width) # Bar plot

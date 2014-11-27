@@ -1,22 +1,15 @@
-# Julia 0.2
-# Last Edit: 19.12.13
+# time_plot.jl
+#
+# Julia 0.3.2
+# Last Edit: 27.11.14
 
-using Datetime
+using Dates
 using PyPlot
-
-close("all")
 
 ######################################
 #  Generate an hour of data at 10Hz  #
 ######################################
-x = Array(DateTime,int64(36000))
-for i=1:1:length(x)
-	x[i] = datetime(2013,10,4,0,0,0,50*i);
-end
-println(x[floor(length(x)/2)])
-
-println("From " * string(x[1]) * " to " * string(x[end]))
-
+x = [DateTime(2013,10,4):Millisecond(100):DateTime(2013,10,4,1)]
 x = float64(x)/1000/60/60/24 # Convert time from milliseconds from day 0 to days from day 0
 y = sin(2*pi*[0:2*pi/length(x):2*pi-(2*pi/length(x))])
 dx = maximum(x) - minimum(x)
@@ -31,7 +24,7 @@ y3 = 10rand(21)-3
 ##########
 #  Plot  #
 ##########
-fig = figure(figsize=(10,10)) # Create a figure and save its handle
+fig = figure("basic_annotation",figsize=(10,10)) # Create a figure and save its handle
 #ax = axes([0.12,0.2,0.75,0.7])
 ax = gca()
 p = plot_date(x,y,linestyle="-",marker="None",label="Test Plot") # Plot a basic line
@@ -88,12 +81,14 @@ annotate("Look, data!",
 annotate("Figure Top Right",
 	xy=[1;1],
 	xycoords="figure fraction",
+	xytext=[0,0],
 	textcoords="offset points",
 	ha="right",
 	va="top")
 annotate(L"$\int x = \frac{x^2}{2} + C$",
 	xy=[1;0],
 	xycoords="axes fraction",
+	xytext=[-10,10],
 	textcoords="offset points",
 	fontsize=30.0,
 	ha="right",

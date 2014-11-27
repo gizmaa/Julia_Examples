@@ -1,7 +1,8 @@
 # Moving Axes Demonstration
-# Julia 0.2
+# 
+# Julia 0.3.2
 # 20.12.13
-# Last Edit: 20.12.13
+# Last Edit: 27.11.14
 
 using PyPlot
 
@@ -16,7 +17,7 @@ y = sin(x)
 ###############
 #  Plot Data  #
 ###############
-fig = figure(figsize=(10,10))
+fig = figure("axis_placement",figsize=(10,10))
 subplot(211)
 p = plot(x,y)
 ax = gca()

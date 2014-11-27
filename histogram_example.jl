@@ -1,10 +1,10 @@
-# Julia 0.2 RC1
+# histogram_example.jl
+#
+# Julia 0.3.2
 # Created: 29.10.13
-# Last Edit: 31.10.13
+# Last Edit: 27.11.14
 
 using PyPlot
-
-close("all") # Close all currently open figures
 
 #################
 #  Create Data  #
@@ -15,7 +15,7 @@ nbins = 50 # Number of bins
 ##########
 #  Plot  #
 ##########
-fig = figure(figsize=(10,10)) # Not strictly required
+fig = figure("histogram_example",figsize=(10,10)) # Not strictly required
 ax = axes() # Not strictly required
 h = PyPlot.plt.hist(x,nbins) # Histogram, PyPlot.plt required to differentiate with conflicting hist command
 

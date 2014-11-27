@@ -1,14 +1,14 @@
-# Julia 0.2 RC1
-# Last Edit: 31.10.13
+# subplot_test.jl
+#
+# Julia 0.3.2
+# Last Edit: 27.11.14
 
 using PyPlot
-
-close("all") # Close all the currently open figures
 
 #####################
 ##  2x2 Plot Grid  ##
 #####################
-fig = figure(figsize=(10,10)) # Create a new blank figure
+fig = figure("subplot_mixed",figsize=(10,10)) # Create a new blank figure
 #fig[:set_figheight](7) # Doesn't work
 #fig[:set_figwidth](3) # Doesn't work
 subplot(221) # Create the 1st axis of a 2x2 arrax of axes
@@ -30,7 +30,7 @@ suptitle("2x2 Subplot")
 ###################
 ##  Column Plot  ##
 ###################
-fig = figure(figsize=(10,10))
+fig = figure("subplot_column",figsize=(10,10))
 subplot(311) # Create the 1st axis of a 3x1 array of axes
 title("311")
 subplot(312) # Create the 2nd axis of a 3x1 arrax of axes
@@ -50,7 +50,7 @@ suptitle("3x1 Subplot")
 ###################
 ##  Shared Axis  ##
 ###################
-fig = figure(figsize=(10,10))
+fig = figure("subplot_touching",figsize=(10,10))
 subplots_adjust(hspace=0.0) # Set the vertical spacing between axes
 subplot(311) # Create the 1st axis of a 3x1 array of axes
 ax1 = gca()

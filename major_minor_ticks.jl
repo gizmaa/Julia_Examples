@@ -1,11 +1,12 @@
+# major_minor_ticks.jl
+#
 # Demonstration of major and minor ticks
-# Julia 0.2
+#
+# Julia 0.3.2
 # 19.12.13
-# Last Edit: 19.12.13
+# Last Edit: 27.11.14
 
 using PyPlot
-
-close("all")
 
 ###################
 #  Generate Data  #
@@ -16,7 +17,7 @@ y = sin(0.1pi*x).*exp(-0.01x)
 ##########
 #  Plot  #
 ##########
-fig = figure(figsize=(10,10))
+fig = figure("major_minor_ticks",figsize=(10,10))
 p = plot(x,y)
 ax = gca()
 xlabel("X Axis")

@@ -1,10 +1,10 @@
-# Julia 0.2 RC1
+# pichart_example.jl
+#
+# Julia 0.3.2
 # Created: 29.10.13
-# Last Edit: 31.10.13
+# Last Edit: 27.11.14
 
 using PyPlot
-
-close("all") # Close all currently open figures
 
 #################
 #  Create Data  #
@@ -19,7 +19,7 @@ sizes = [15, 30, 45, 10]
 ###############
 #  Pie Chart  #
 ###############
-fig = figure(figsize=(10,10))
+fig = figure("piechart_example",figsize=(10,10))
 p = pie(sizes,labels=labels,shadow=true,startangle=90,explode=explode,colors=colors,autopct="%1.1f%%")
 
 axis("equal")
