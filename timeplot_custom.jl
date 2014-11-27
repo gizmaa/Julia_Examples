@@ -25,7 +25,7 @@ majorlocator = matplotlib[:dates][:DayLocator](interval=1)
 minorlocator = matplotlib[:dates][:HourLocator](byhour=(8, 16))
 
 # Plot
-fig = figure("Custom Time Plot",figsize=(16,10)) # Create a figure and save the handle
+fig = figure("Custom Time Plot",figsize=(12,12)) # Create a figure and save the handle
 ax1 = axes()
 p1 = plot_date(time2,y,linestyle="-",marker="None",label="test")
 axis("tight")
