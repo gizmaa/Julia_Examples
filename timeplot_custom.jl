@@ -1,6 +1,6 @@
 # timeplot_custom.jl
 #
-#	Demonstrate renformatting of time axis
+#	Demonstrate reformatting of time axis
 #
 # Julia 0.3.2
 # 27.11.2014
