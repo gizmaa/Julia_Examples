@@ -1,7 +1,8 @@
 # time_plot.jl
 #
+# gizmaa (https://gist.github.com/gizmaa/7214002)
 # Julia 0.3.2
-# Last Edit: 27.11.14
+# Last Edit: 09.12.14
 
 using Dates
 using PyPlot

@@ -2,9 +2,10 @@
 #
 #	Demonstrate reformatting of time axis
 #
+# gizmaa (https://gist.github.com/gizmaa/7214002)
 # Julia 0.3.2
 # 27.11.2014
-# Last Edit: 27.11.2014
+# Last Edit: 09.12.2014
 
 using PyPlot
 using Dates

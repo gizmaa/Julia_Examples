@@ -2,9 +2,10 @@
 #
 # Demonstration of major and minor ticks
 #
+# gizmaa (https://gist.github.com/gizmaa/7214002)
 # Julia 0.3.2
 # 19.12.13
-# Last Edit: 27.11.14
+# Last Edit: 09.12.14
 
 using PyPlot
 

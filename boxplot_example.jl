@@ -1,8 +1,9 @@
 # boxplot_example.jl
 #
+# gizmaa (https://gist.github.com/gizmaa/7214002)
 # Julia 0.3.2
 # Created: 30.10.13
-# Last Edit: 27.11.14
+# Last Edit: 09.12.14
 
 using PyPlot
 
