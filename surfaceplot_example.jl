@@ -33,7 +33,7 @@ end
 ############
 ##  Plot  ##
 ############
-fig = figure("Surface Plot",figsize=(16,10))
+fig = figure("Surface Plot",figsize=(10,10))
 ax = fig[:add_subplot](2,1,1, projection = "3d") 
 ax[:plot_surface](xgrid, ygrid, z, rstride=2,edgecolors="k", cstride=2, cmap=ColorMap("gray"), alpha=0.8, linewidth=0.25) 
 xlabel("X") 
