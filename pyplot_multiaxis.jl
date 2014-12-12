@@ -1,11 +1,11 @@
-# multiaxis.jl
+# pyplot_multiaxis.jl
 #
-# Example of using multiple overlapping axes
+#	Demonstrate use of multiple overlapping axes
 #
 # gizmaa (https://gist.github.com/gizmaa/7214002)
 # Julia 0.3.2
 # 19.12.13
-# Last Edit: 09.12.14
+# Last Edit: 12.12.14
 
 using PyPlot
 
@@ -22,7 +22,7 @@ y3 = 30rand(n,1) - 15
 ##########
 #  Plot  #
 ##########
-fig = figure("multiaxis_example",figsize=(10,10))
+fig = figure("pyplot_multiaxis",figsize=(10,10))
 p = plot(x,y1,linestyle="-",marker="o",label="First") # Plot a basic line
 ax = gca()
 title("Multi-axis Plot")

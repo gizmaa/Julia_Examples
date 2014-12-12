@@ -1,11 +1,11 @@
-# surface_example.jl
+# pyplot_surfaceplot.jl
 #
-#	Surface Plot Example
+#	Surface Plot demonstration
 #
 # Daniel Høegh (https://gist.github.com/dhoegh)
 # Julia 0.3.2
 # 09.12.2014
-# Last Edit: 09.12.2014
+# Last Edit: 12.12.2014
 
 # Reference: https://groups.google.com/d/msg/julia-users/eVtZdp3htTM/TJOt3exCxKgJ
 
@@ -33,7 +33,7 @@ end
 ############
 ##  Plot  ##
 ############
-fig = figure("Surface Plot",figsize=(10,10))
+fig = figure("pyplot_surfaceplot",figsize=(10,10))
 ax = fig[:add_subplot](2,1,1, projection = "3d") 
 ax[:plot_surface](xgrid, ygrid, z, rstride=2,edgecolors="k", cstride=2, cmap=ColorMap("gray"), alpha=0.8, linewidth=0.25) 
 xlabel("X") 

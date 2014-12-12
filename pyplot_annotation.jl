@@ -1,8 +1,10 @@
-# time_plot.jl
+# pyplot_annotation.jl
+#
+#	Demonstrate plot annotations
 #
 # gizmaa (https://gist.github.com/gizmaa/7214002)
 # Julia 0.3.2
-# Last Edit: 09.12.14
+# Last Edit: 12.12.14
 
 using Dates
 using PyPlot
@@ -25,7 +27,7 @@ y3 = 10rand(21)-3
 ##########
 #  Plot  #
 ##########
-fig = figure("basic_annotation",figsize=(10,10)) # Create a figure and save its handle
+fig = figure("pyplot_annotation",figsize=(10,10)) # Create a figure and save its handle
 #ax = axes([0.12,0.2,0.75,0.7])
 ax = gca()
 p = plot_date(x,y,linestyle="-",marker="None",label="Test Plot") # Plot a basic line

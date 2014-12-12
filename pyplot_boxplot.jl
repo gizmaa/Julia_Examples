@@ -1,9 +1,11 @@
-# boxplot_example.jl
+# pyplot_boxplot.jl
+#
+#	Box plots demonstrations
 #
 # gizmaa (https://gist.github.com/gizmaa/7214002)
 # Julia 0.3.2
 # Created: 30.10.13
-# Last Edit: 09.12.14
+# Last Edit: 12.12.14
 
 using PyPlot
 
@@ -37,7 +39,7 @@ end
 ################
 ##  Box Plot  ##
 ################
-fig = figure("boxplot_example",figsize=(10,10))
+fig = figure("pyplot_boxplot",figsize=(10,10))
 subplot(221)
 boxplot(data) # Basic
 

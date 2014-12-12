@@ -1,9 +1,11 @@
-# inexact_plots.jl
+# pyplot_inexact.jl
+#
+#	Demonstrate XKCD style inexact plots
 #
 # gizmaa (https://gist.github.com/gizmaa/7214002)
 # Julia 0.3.2
 # Created: 29.10.13
-# Last Edit: 09.12.14
+# Last Edit: 12.12.14
 
 using PyPlot
 # http://matplotlib.org/examples/showcase/xkcd.html
@@ -21,7 +23,7 @@ end
 #  XKCD Plot #
 ##############
 xkcd() # Set to XKCD mode, based on the comic (hand drawn)
-fig = figure("inexact_plots",figsize=(10,10))
+fig = figure("pyplot_inexact",figsize=(10,10))
 ax = axes()
 p = plot(x,y)
 ax[:set_ylim]([0.2,1.1])

@@ -1,8 +1,10 @@
-# windrose_test.jl
+# pyplot_windrose.jl
+#
+#	Demonstrate windrose bar and line plots
 #
 # gizmaa (https://gist.github.com/gizmaa/7214002)
 # Julia 0.3.2
-# Last Edit: 09.12.14
+# Last Edit: 12.12.14
 
 using PyPlot
 
@@ -16,7 +18,7 @@ width = 2pi/length(theta) # Desired width of each bar in the bar plot
 ##########################
 ##  Windrose Line Plot  ##
 ##########################
-fig = figure("windrose_line",figsize=(10,10)) # Create a new figure
+fig = figure("pyplot_windrose_lineplot",figsize=(10,10)) # Create a new figure
 ax = axes(polar="true") # Create a polar axis
 title("Wind Rose - Line")
 p = plot(theta,r,linestyle="-",marker="None") # Basic line plot
@@ -30,7 +32,7 @@ fig[:canvas][:draw]() # Update the figure
 #########################
 ##  Windrose Bar Plot  ##
 #########################
-fig = figure("windrose_bar",figsize=(10,10)) # Create a new figure
+fig = figure("pyplot_windrose_barplot",figsize=(10,10)) # Create a new figure
 ax = axes(polar="true") # Create a polar axis
 title("Wind Rose - Bar")
 b = bar(theta,r,width=width) # Bar plot

@@ -1,9 +1,11 @@
-# pichart_example.jl
+# pyplot_piechart.jl
+#
+#	Demonstrate plotting of pie charts
 #
 # gizmaa (https://gist.github.com/gizmaa/7214002)
 # Julia 0.3.2
 # Created: 29.10.13
-# Last Edit: 09.12.14
+# Last Edit: 12.12.14
 
 using PyPlot
 
@@ -20,7 +22,7 @@ sizes = [15, 30, 45, 10]
 ###############
 #  Pie Chart  #
 ###############
-fig = figure("piechart_example",figsize=(10,10))
+fig = figure("pyplot_piechart",figsize=(10,10))
 p = pie(sizes,labels=labels,shadow=true,startangle=90,explode=explode,colors=colors,autopct="%1.1f%%")
 
 axis("equal")

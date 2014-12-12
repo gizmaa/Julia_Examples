@@ -1,9 +1,11 @@
-# Moving Axes Demonstration
+# pyplot_axis_placement.jl
+#
+#	Demonstrate the placement of axes
 # 
 # gizmaa (https://gist.github.com/gizmaa/7214002)
 # Julia 0.3.2
 # 20.12.13
-# Last Edit: 09.12.14
+# Last Edit: 12.12.14
 
 using PyPlot
 
@@ -18,7 +20,7 @@ y = sin(x)
 ###############
 #  Plot Data  #
 ###############
-fig = figure("axis_placement",figsize=(10,10))
+fig = figure("pyplot_axis_placement",figsize=(10,10))
 subplot(211)
 p = plot(x,y)
 ax = gca()

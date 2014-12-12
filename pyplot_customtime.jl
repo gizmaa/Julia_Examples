@@ -1,11 +1,11 @@
-# timeplot_custom.jl
+# pyplot_customtime.jl
 #
 #	Demonstrate reformatting of time axis
 #
 # gizmaa (https://gist.github.com/gizmaa/7214002)
 # Julia 0.3.2
 # 27.11.2014
-# Last Edit: 09.12.2014
+# Last Edit: 12.12.2014
 
 using PyPlot
 using Dates
@@ -26,7 +26,7 @@ majorlocator = matplotlib[:dates][:DayLocator](interval=1)
 minorlocator = matplotlib[:dates][:HourLocator](byhour=(8, 16))
 
 # Plot
-fig = figure("Custom Time Plot",figsize=(12,12)) # Create a figure and save the handle
+fig = figure("pyplot_customtime",figsize=(12,12)) # Create a figure and save the handle
 ax1 = axes()
 p1 = plot_date(time2,y,linestyle="-",marker="None",label="test")
 axis("tight")

@@ -1,8 +1,10 @@
-# errorbar_test.jl
+# pyplot_errorbar.jl
+#
+#	Demonstrate error bar plots
 #
 # gizmaa (https://gist.github.com/gizmaa/7214002)
 # Julia 0.3.2
-# Last Edit: 09.12.14
+# Last Edit: 12.12.14
 
 using Dates
 using PyPlot
@@ -23,7 +25,7 @@ x = float64(x)/1000/60/60/24 # Convert time from milliseconds from day 0 to days
 ##########
 #  Plot  #
 ##########
-fig = figure("errorbar_irregular",figsize=(10,10)) # Create a new figure
+fig = figure("pyplot_errorbar",figsize=(10,10)) # Create a new figure
 p = plot_date(x,y,linestyle="-",marker="None",label="Base Plot") # Basic line plot
 pe = errorbar(x,y,yerr=errs,fmt="o") # Plot irregular error bars
 axis("tight")

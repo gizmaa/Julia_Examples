@@ -1,9 +1,11 @@
-# scatterplot_example.jl
+# pyplot_scatterplot.jl
+#
+#	Demonstrate scatter plots
 #
 # gizmaa (https://gist.github.com/gizmaa/7214002)
 # Julia 0.3.2
 # Created: 29.10.13
-# Last Edit: 09.12.14
+# Last Edit: 12.12.14
 
 using PyPlot
 
@@ -17,7 +19,7 @@ areas = 800*rand(50)
 ##################
 #  Scatter Plot  #
 ##################
-fig = figure("scatterplot_example",figsize=(10,10))
+fig = figure("pyplot_scatterplot",figsize=(10,10))
 ax = axes()
 scatter(x,y,s=areas,alpha=0.5)
 

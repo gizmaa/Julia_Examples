@@ -1,15 +1,17 @@
-# subplot_test.jl
+# pyplot_subplot.jl
+#
+#	Demonstrate various ways of doing subplots
 #
 # gizmaa (https://gist.github.com/gizmaa/7214002)
 # Julia 0.3.2
-# Last Edit: 09.12.14
+# Last Edit: 12.12.14
 
 using PyPlot
 
 #####################
 ##  2x2 Plot Grid  ##
 #####################
-fig = figure("subplot_mixed",figsize=(10,10)) # Create a new blank figure
+fig = figure("pyplot_subplot_mixed",figsize=(10,10)) # Create a new blank figure
 #fig[:set_figheight](7) # Doesn't work
 #fig[:set_figwidth](3) # Doesn't work
 subplot(221) # Create the 1st axis of a 2x2 arrax of axes
@@ -31,7 +33,7 @@ suptitle("2x2 Subplot")
 ###################
 ##  Column Plot  ##
 ###################
-fig = figure("subplot_column",figsize=(10,10))
+fig = figure("pyplot_subplot_column",figsize=(10,10))
 subplot(311) # Create the 1st axis of a 3x1 array of axes
 title("311")
 subplot(312) # Create the 2nd axis of a 3x1 arrax of axes
@@ -51,7 +53,7 @@ suptitle("3x1 Subplot")
 ###################
 ##  Shared Axis  ##
 ###################
-fig = figure("subplot_touching",figsize=(10,10))
+fig = figure("pyplot_subplot_touching",figsize=(10,10))
 subplots_adjust(hspace=0.0) # Set the vertical spacing between axes
 subplot(311) # Create the 1st axis of a 3x1 array of axes
 ax1 = gca()

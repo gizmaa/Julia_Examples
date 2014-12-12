@@ -1,11 +1,11 @@
-# major_minor_ticks.jl
+# pyplot_majorminor.jl
 #
-# Demonstration of major and minor ticks
+#	Demonstration of major and minor ticks
 #
 # gizmaa (https://gist.github.com/gizmaa/7214002)
 # Julia 0.3.2
 # 19.12.13
-# Last Edit: 09.12.14
+# Last Edit: 12.12.14
 
 using PyPlot
 
@@ -18,7 +18,7 @@ y = sin(0.1pi*x).*exp(-0.01x)
 ##########
 #  Plot  #
 ##########
-fig = figure("major_minor_ticks",figsize=(10,10))
+fig = figure("pyplot_majorminor",figsize=(10,10))
 p = plot(x,y)
 ax = gca()
 xlabel("X Axis")

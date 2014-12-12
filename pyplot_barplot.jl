@@ -1,9 +1,11 @@
-# barplot_example.jl
+# pyplot_barplot.jl
+#
+#	Bar plot demonstration
 #
 # gizmaa (https://gist.github.com/gizmaa/7214002)
 # Julia 0.3.2
 # Created: 29.10.13
-# Last Edit: 09.12.14
+# Last Edit: 12.12.14
 
 using PyPlot
 
@@ -18,7 +20,7 @@ y = 100*rand(50);
 ################
 ##  Bar Plot  ##
 ################
-fig = figure("barplot_example",figsize=(10,10))
+fig = figure("pyplot_barplot",figsize=(10,10))
 subplot(211)
 b = bar(x,y,color="#0f87bf",align="center",alpha=0.4)
 axis("tight")
