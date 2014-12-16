@@ -1,11 +1,11 @@
 # pyplot_histogram.jl
 #
-#	Demonstrat plotting of histograms
+#	Demonstrate plotting of histograms
 #
 # gizmaa (https://gist.github.com/gizmaa/7214002)
 # Julia 0.3.2
 # Created: 29.10.13
-# Last Edit: 12.12.14
+# Last Edit: 16.12.14
 
 using PyPlot
 
