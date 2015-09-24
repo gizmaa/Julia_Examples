@@ -20,7 +20,7 @@ nbins = 50 # Number of bins
 ##########
 fig = figure("pyplot_histogram",figsize=(10,10)) # Not strictly required
 ax = axes() # Not strictly required
-h = PyPlot.plt.hist(x,nbins) # Histogram, PyPlot.plt required to differentiate with conflicting hist command
+h = PyPlot.plt[:hist](x,nbins) # Histogram, PyPlot.plt[:hist] required for PyPlot versions v2.1.0 and above, otherwise replace Pyplot.plt[:hist] with Pyplot.plt.hist()
 
 grid("on")
 xlabel("X")
