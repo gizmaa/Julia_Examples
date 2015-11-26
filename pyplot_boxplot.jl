@@ -3,9 +3,9 @@
 #	Box plots demonstrations
 #
 # gizmaa (https://gist.github.com/gizmaa/7214002)
-# Julia 0.3.2
+# Julia 0.4.1
 # Created: 30.10.13
-# Last Edit: 12.12.14
+# Last Edit: 25.11.15
 
 using PyPlot
 
@@ -21,19 +21,19 @@ num = 5
 data = Array(Any,num) # Preallocate an ANY array for the storage of final values
 for i=1:1:num
 	num1 = round(40rand(1)) + 10
-	num1 = int(num1[1])
+	num1 = Int(num1[1])
 	num2 = round(20rand(1)) + 10
-	num2 = int(num2[1])
+	num2 = Int(num2[1])
 	num3 = round(10rand(1)) + 1
-	num3 = int(num3[1])
+	num3 = Int(num3[1])
 	num4 = round(10rand(1)) + 1
-	num4 = int(num4[1])
+	num4 = Int(num4[1])
 	
 	spread = 100rand(num1)
 	center = 50rand(num2)
 	flier_high = 100rand(num3) + 100
 	flier_low = -100rand(num4)
-	data[i] = [spread,center,flier_high,flier_low]
+	data[i] = [spread,center,flier_high,flier_low;]
 end
 
 ################

@@ -3,24 +3,23 @@
 #	Demonstrate error bar plots
 #
 # gizmaa (https://gist.github.com/gizmaa/7214002)
-# Julia 0.3.2
-# Last Edit: 12.12.14
+# Julia 0.4.1
+# Last Edit: 25.11.15
 
-using Dates
 using PyPlot
 
 ###################################
 #  Generate a few points of data  #
 ###################################
-x = [DateTime(2013,10,4):Day(1):DateTime(2013,10,9)]
+x = [DateTime(2013,10,4):Day(1):DateTime(2013,10,9);]
 y = [0.9;0.75;0.5;0.4;0.35;0.3]
-uppererror = [0.05 0.05 0.05 0.03 0.15 0.05]
-lowererror = [0.15 0.2 0.05 0.1 0.05 0.05]
+uppererror = [0.05 0.05 0.05 0.03 0.15 0.05;]
+lowererror = [0.15 0.2 0.05 0.1 0.05 0.05;]
 errs = [lowererror;uppererror]
 
 println("From " * string(x[1]) * " to " * string(x[end]))
 
-x = float64(x)/1000/60/60/24 # Convert time from milliseconds from day 0 to days from day 0
+x = map(Float64,x)/1000/60/60/24 # Convert time from milliseconds from day 0 to days from day 0
 
 ##########
 #  Plot  #

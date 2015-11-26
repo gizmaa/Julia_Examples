@@ -3,8 +3,8 @@
 #	Demonstrate various ways of doing subplots
 #
 # gizmaa (https://gist.github.com/gizmaa/7214002)
-# Julia 0.3.2
-# Last Edit: 12.12.14
+# Julia 0.4.1
+# Last Edit: 26.11.15
 
 using PyPlot
 

@@ -3,16 +3,16 @@
 #	Demonstration of major and minor ticks
 #
 # gizmaa (https://gist.github.com/gizmaa/7214002)
-# Julia 0.3.2
+# Julia 0.4.1
 # 19.12.13
-# Last Edit: 12.12.14
+# Last Edit: 26.11.15
 
 using PyPlot
 
 ###################
 #  Generate Data  #
 ###################
-x = [0.0:0.01:100.0]
+x = [0.0:0.01:100.0;]
 y = sin(0.1pi*x).*exp(-0.01x)
 
 ##########

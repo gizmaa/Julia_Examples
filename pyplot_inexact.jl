@@ -3,9 +3,9 @@
 #	Demonstrate XKCD style inexact plots
 #
 # gizmaa (https://gist.github.com/gizmaa/7214002)
-# Julia 0.3.2
+# Julia 0.4.1
 # Created: 29.10.13
-# Last Edit: 12.12.14
+# Last Edit: 26.11.15
 
 using PyPlot
 # http://matplotlib.org/examples/showcase/xkcd.html
@@ -13,7 +13,7 @@ using PyPlot
 #################
 #  Create Data  #
 #################
-x = [1:1:100]
+x = [1:1:100;]
 y = ones(100)
 for i=70:1:100
 	y[i] = y[i] - (0.7/30)*(i-70)
@@ -26,8 +26,8 @@ xkcd() # Set to XKCD mode, based on the comic (hand drawn)
 fig = figure("pyplot_inexact",figsize=(10,10))
 ax = axes()
 p = plot(x,y)
-ax[:set_ylim]([0.2,1.1])
-annotate("THE DAY I REALIZED\nI COULD COOK BACON\nWHENEVER I WANTED",xy=[70,1],arrowprops=["arrowstyle"=>"->"],xytext=[25,0.8])
+ax[:set_ylim]([0.2;1.1])
+annotate("THE DAY I REALIZED\nI COULD COOK BACON\nWHENEVER I WANTED",xy=[70;1],arrowprops=Dict("arrowstyle"=>"->"),xytext=[25;0.8])
 
 xticks([])
 yticks([])

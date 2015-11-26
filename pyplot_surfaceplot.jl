@@ -3,9 +3,9 @@
 #	Surface Plot demonstration
 #
 # Daniel Høegh (https://gist.github.com/dhoegh)
-# Julia 0.3.2
+# Julia 0.4.1
 # 09.12.2014
-# Last Edit: 12.12.2014
+# Last Edit: 26.11.15
 
 # Reference: https://groups.google.com/d/msg/julia-users/eVtZdp3htTM/TJOt3exCxKgJ
 
@@ -26,7 +26,7 @@ z = zeros(n,n)
 
 for i in 1:n
     for j in 1:n
-        z[i:i,j:j] = pdf(MvNormal([eye(2)]),[x[i] y[j]]')
+        z[i:i,j:j] = pdf(MvNormal(eye(2)),[x[i];y[j]])
     end
 end
 
