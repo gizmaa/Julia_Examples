@@ -3,21 +3,20 @@
 #	Demonstrate reformatting of time axis
 #
 # gizmaa (https://gist.github.com/gizmaa/7214002)
-# Julia 0.3.2
+# Julia 0.4.1
 # 27.11.2014
-# Last Edit: 12.12.2014
+# Last Edit: 25.11.2015
 
 using PyPlot
-using Dates
 
 # Create Data
-dt = Millisecond(100)
-time = [DateTime(2014,11,20):dt:DateTime(2014,11,22)]
+dt = Dates.Millisecond(100)
+time = [DateTime(2014,11,20):dt:DateTime(2014,11,22);]
 y = fill!(Array(Float64,length(time)),42)
 #y = floor(100*rand(length(time))) # Fails unless the time span is very short
 
-font1 = ["fontname"=>"Sans","style"=>"normal"]
-time2 = float64(time)/1000/60/60/24 # Convert time from milliseconds from day 0 to days from day 0
+font1 = Dict("fontname"=>"Sans","style"=>"normal")
+time2 = map(Float64,time)/1000/60/60/24 # Convert time from milliseconds from day 0 to days from day 0
 timespan = "\n" * Dates.format(minimum(time),"yyyy-mm-dd HH:MM:SS") * " - " * Dates.format(maximum(time),"yyyy-mm-dd HH:MM:SS")
 
 majorformatter = matplotlib[:dates][:DateFormatter]("%d.%m.%Y")

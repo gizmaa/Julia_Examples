@@ -3,32 +3,31 @@
 #	Demonstrate plot annotations
 #
 # gizmaa (https://gist.github.com/gizmaa/7214002)
-# Julia 0.3.2
-# Last Edit: 12.12.14
+# Julia 0.4.1
+# Last Edit: 25.11.15
 
-using Dates
 using PyPlot
 
 ######################################
 #  Generate an hour of data at 10Hz  #
 ######################################
-x = [DateTime(2013,10,4):Millisecond(100):DateTime(2013,10,4,1)]
-x = float64(x)/1000/60/60/24 # Convert time from milliseconds from day 0 to days from day 0
-y = sin(2*pi*[0:2*pi/length(x):2*pi-(2*pi/length(x))])
+x = [DateTime(2013,10,4):Millisecond(100):DateTime(2013,10,4,1);] # Generate time array
+x = map(Float64,x)/1000/60/60/24 # Convert time from milliseconds from day 0 to days from day 0
+y = sin(2*pi*collect(0:2*pi/length(x):2*pi-(2*pi/length(x))))
 dx = maximum(x) - minimum(x)
 dy = maximum(y) - minimum(y)
 
-y2 = 30*(1+sin(2*pi*[pi:2*pi/length(x):3*pi-(2*pi/length(x))]))-10
-x2 = [minimum(x):dx/20:maximum(x)]
+y2 = 30*(1+sin(2*pi*collect(pi:2*pi/length(x):3*pi-(2*pi/length(x)))))-10
+x2 = [minimum(x):dx/20:maximum(x);]
 y2 = 10rand(21)-3
-x3 = [minimum(x):dx/20:maximum(x)]
+x3 = [minimum(x):dx/20:maximum(x);]
 y3 = 10rand(21)-3
 
 ##########
 #  Plot  #
 ##########
 fig = figure("pyplot_annotation",figsize=(10,10)) # Create a figure and save its handle
-#ax = axes([0.12,0.2,0.75,0.7])
+#ax = axes([0.12;0.2;0.75;0.7])
 ax = gca()
 p = plot_date(x,y,linestyle="-",marker="None",label="Test Plot") # Plot a basic line
 axis("tight") # Fit the axis tightly to the plot
@@ -39,10 +38,10 @@ legend(loc="upper right",fancybox="true") # Create a legend of all the existing 
 ##################
 #  Text Styling  #
 ##################
-font1 = ["family"=>"serif",
+font1 = Dict("family"=>"serif",
     "color"=>"darkred",
     "weight"=>"normal",
-    "size"=>16]
+    "size"=>16)
 xlabel("Time",fontdict=font1)
 ylabel("Velocity (m/s)")
 setp(ax[:get_yticklabels](),fontsize=24,color="blue") # Y Axis font formatting
@@ -50,7 +49,7 @@ setp(ax[:get_yticklabels](),fontsize=24,color="blue") # Y Axis font formatting
 #################
 #  Arrow Tests  #
 #################
-# This arrows oriengt toward the x-axis, the more horizontal they are the more skewed they look
+# This arrows orient toward the x-axis, the more horizontal they are the more skewed they look
 arrow(x[floor(length(x)/2)],
 	0.4,
 	0.0009,
@@ -80,7 +79,7 @@ annotate("Look, data!",
 	xy=[x[floor(length(x)/4.1)];y[floor(length(y)/4.1)]],
 	xytext=[x[floor(length(x)/4.1)]+0.1dx;y[floor(length(y)/4.1)]+0.1dy],
 	xycoords="data",
-	arrowprops=["facecolor"=>"black"]) # Julia dictionary objects are automatically converted to Python object when they pass into a PyPlot function
+	arrowprops=Dict("facecolor"=>"black")) # Julia dictionary objects are automatically converted to Python object when they pass into a PyPlot function
 annotate("Figure Top Right",
 	xy=[1;1],
 	xycoords="figure fraction",

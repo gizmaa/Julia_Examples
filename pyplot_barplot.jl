@@ -3,18 +3,16 @@
 #	Bar plot demonstration
 #
 # gizmaa (https://gist.github.com/gizmaa/7214002)
-# Julia 0.3.2
+# Julia 0.4.1
 # Created: 29.10.13
-# Last Edit: 12.12.14
+# Last Edit: 25.11.15
 
 using PyPlot
-
-close("all") # Close all currently open figures
 
 #################
 #  Create Data  #
 #################
-x = [1:1:50]
+x = [1:1:50;]
 y = 100*rand(50);
 
 ################

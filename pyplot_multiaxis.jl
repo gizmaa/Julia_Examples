@@ -3,9 +3,9 @@
 #	Demonstrate use of multiple overlapping axes
 #
 # gizmaa (https://gist.github.com/gizmaa/7214002)
-# Julia 0.3.2
+# Julia 0.4.1
 # 19.12.13
-# Last Edit: 12.12.14
+# Last Edit: 26.11.15
 
 using PyPlot
 
@@ -14,7 +14,7 @@ using PyPlot
 ##################
 n = 15 # Number of values
 
-x = [1:n]
+x = [1:n;]
 y1 = 10rand(n,1) - 2
 y2 = 1000rand(n,1)
 y3 = 30rand(n,1) - 15
@@ -28,19 +28,19 @@ ax = gca()
 title("Multi-axis Plot")
 
 xlabel("X Axis")
-font1 = ["color"=>"blue"]
+font1 = Dict("color"=>"blue")
 ylabel("Left Axis",fontdict=font1)
 setp(ax[:get_yticklabels](),color="blue") # Y Axis font formatting
 
 ################
 #  Other Axes  #
 ################
-new_position = [0.06,0.06,0.77,0.91] # Position Method 2
+new_position = [0.06;0.06;0.77;0.91] # Position Method 2
 ax[:set_position](new_position) # Position Method 2: Change the size and position of the axis
 #fig[:subplots_adjust](right=0.85) # Position Method 1
 
 ax2 = ax[:twinx]() # Create another axis on top of the current axis
-font2 = ["color"=>"purple"]
+font2 = Dict("color"=>"purple")
 ylabel("Right Axis",fontdict=font2)
 p = plot_date(x,y2,color="purple",linestyle="-",marker="o",label="Second") # Plot a basic line
 ax2[:set_position](new_position) # Position Method 2
@@ -48,7 +48,7 @@ setp(ax2[:get_yticklabels](),color="purple") # Y Axis font formatting
 
 ax3 = ax[:twinx]() # Create another axis on top of the current axis
 ax3[:spines]["right"][:set_position](("axes",1.12)) # Offset the y-axis label from the axis itself so it doesn't overlap the second axis
-font3 = ["color"=>"green"]
+font3 = Dict("color"=>"green")
 ylabel("Far Right Axis",fontdict=font3)
 p = plot_date(x,y3,color="green",linestyle="-",marker="o",label="Third") # Plot a basic line
 ax3[:set_position](new_position) # Position Method 2

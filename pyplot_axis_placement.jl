@@ -3,18 +3,16 @@
 #	Demonstrate the placement of axes
 # 
 # gizmaa (https://gist.github.com/gizmaa/7214002)
-# Julia 0.3.2
+# Julia 0.4.1
 # 20.12.13
-# Last Edit: 12.12.14
+# Last Edit: 25.11.15
 
 using PyPlot
-
-close("all")
 
 ###################
 #  Generate Data  #
 ###################
-x = [0:pi/50:2pi]
+x = [0:pi/50:2pi;]
 y = sin(x)
 
 ###############
