@@ -34,6 +34,8 @@ push!(lines,collect(zip(xs,ys)))
 ##############
 ##  Colors  ##
 ##############
+# Line segments will be plotted with the following order of colors and will
+# cycle back to the beginning of the array when it has gone through all of them
 c = Vector{Int}[[1,0,0],[0,1,0],[0,0,1]]
 
 # Assemble everything into a LineCollection
@@ -44,8 +46,6 @@ line_segments = matplotlib[:collections][:LineCollection](lines,colors=c)
 ############
 fig = figure("Line Collection Example",figsize=(10,10))
 ax = axes()
-xlabel("Something")
-ylabel("Something Else")
 ax[:add_collection](line_segments)
 axis("image")
 axis("tight")
