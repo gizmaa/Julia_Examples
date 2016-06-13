@@ -6,8 +6,6 @@
 # 10.06.2016
 # Last Edit: 13.06.2016
 
-#include("/home/jeremy/AD-Home/Code/Julia/Jeremy/linecollection_example.jl")
-
 # Reference: David P. Sanders - https://groups.google.com/d/msg/julia-users/BGcEOZVw8YU/Oacy1O5zBQAJ
 
 using PyPlot
