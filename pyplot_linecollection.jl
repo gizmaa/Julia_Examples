@@ -2,9 +2,9 @@
 #
 #   Line Collection plot example
 #
-# Julia 0.4.5
-# 10.06.2016
-# Last Edit: 13.06.2016
+# Julia 0.5.0
+# 10.06.16
+# Last Edit: 20.10.16
 
 # Reference: David P. Sanders - https://groups.google.com/d/msg/julia-users/BGcEOZVw8YU/Oacy1O5zBQAJ
 

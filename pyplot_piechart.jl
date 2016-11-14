@@ -3,9 +3,9 @@
 #	Demonstrate plotting of pie charts
 #
 # gizmaa (https://gist.github.com/gizmaa/7214002)
-# Julia 0.4.2
+# Julia 0.5.0
 # Created: 29.10.13
-# Last Edit: 08.03.16
+# Last Edit: 20.10.16
 
 using PyPlot
 

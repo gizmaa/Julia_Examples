@@ -1,11 +1,11 @@
 # pyplot_axis_placement.jl
 #
 #	Demonstrate the placement of axes
-# 
+#
 # gizmaa (https://gist.github.com/gizmaa/7214002)
-# Julia 0.4.1
+# Julia 0.5.0
 # 20.12.13
-# Last Edit: 25.11.15
+# Last Edit: 20.10.16
 
 using PyPlot
 
@@ -45,4 +45,3 @@ xlabel("X Axis")
 ylabel("Y Axis")
 
 suptitle("Axis Placement")
-

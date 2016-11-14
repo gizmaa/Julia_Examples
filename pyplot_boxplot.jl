@@ -3,9 +3,11 @@
 #	Box plots demonstrations
 #
 # gizmaa (https://gist.github.com/gizmaa/7214002)
-# Julia 0.4.1
+# Julia 0.5.0
 # Created: 30.10.13
-# Last Edit: 25.11.15
+# Last Edit: 20.10.16
+
+# NOTE: As of Julia 0.5.0 the symbol colors aren't effected by settings
 
 using PyPlot
 
@@ -47,7 +49,7 @@ subplot(222)
 boxplot(data,1)
 
 subplot(223)
-boxplot(data,0,"gD")
+boxplot(data,0,"gD") # (gD = green diamond)
 
 subplot(224)
 boxplot(data, # Each column/cell is one box

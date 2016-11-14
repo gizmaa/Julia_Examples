@@ -3,15 +3,15 @@
 #	Demonstrate error bar plots
 #
 # gizmaa (https://gist.github.com/gizmaa/7214002)
-# Julia 0.4.1
-# Last Edit: 25.11.15
+# Julia 0.5.0
+# Last Edit: 20.10.16
 
 using PyPlot
 
 ###################################
 #  Generate a few points of data  #
 ###################################
-x = [DateTime(2013,10,4):Day(1):DateTime(2013,10,9);]
+x = [DateTime(2013,10,4):Dates.Day(1):DateTime(2013,10,9);]
 y = [0.9;0.75;0.5;0.4;0.35;0.3]
 uppererror = [0.05 0.05 0.05 0.03 0.15 0.05;]
 lowererror = [0.15 0.2 0.05 0.1 0.05 0.05;]

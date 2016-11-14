@@ -3,9 +3,9 @@
 #	Bar plot demonstration
 #
 # gizmaa (https://gist.github.com/gizmaa/7214002)
-# Julia 0.4.1
+# Julia 0.5.0
 # Created: 29.10.13
-# Last Edit: 25.11.15
+# Last Edit: 20.10.16
 
 using PyPlot
 

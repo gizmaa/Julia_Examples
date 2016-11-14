@@ -3,15 +3,15 @@
 #	Demonstrate plot annotations
 #
 # gizmaa (https://gist.github.com/gizmaa/7214002)
-# Julia 0.4.1
-# Last Edit: 25.11.15
+# Julia 0.5.0
+# Last Edit: 20.10.16
 
 using PyPlot
 
 ######################################
 #  Generate an hour of data at 10Hz  #
 ######################################
-x = [DateTime(2013,10,4):Millisecond(100):DateTime(2013,10,4,1);] # Generate time array
+x = [DateTime(2013,10,4):Dates.Millisecond(100):DateTime(2013,10,4,1);] # Generate time array
 x = map(Float64,x)/1000/60/60/24 # Convert time from milliseconds from day 0 to days from day 0
 y = sin(2*pi*collect(0:2*pi/length(x):2*pi-(2*pi/length(x))))
 dx = maximum(x) - minimum(x)
@@ -50,7 +50,7 @@ setp(ax[:get_yticklabels](),fontsize=24,color="blue") # Y Axis font formatting
 #  Arrow Tests  #
 #################
 # This arrows orient toward the x-axis, the more horizontal they are the more skewed they look
-arrow(x[floor(length(x)/2)],
+arrow(x[convert(Int64,floor(length(x)/2))],
 	0.4,
 	0.0009,
 	0.4,
@@ -60,8 +60,8 @@ arrow(x[floor(length(x)/2)],
 	overhang=0.5,
 	head_starts_at_zero="true",
 	facecolor="red")
-arrow(x[floor(0.3length(x))]-0.25dx,
-	y[floor(0.3length(y))]+0.25dy,
+arrow(x[convert(Int64,floor(0.3length(x)))]-0.25dx,
+	y[convert(Int64,floor(0.3length(y)))]+0.25dy,
 	0.25dx,
 	-0.25dy,
 	head_width=0.001,
@@ -76,8 +76,8 @@ arrow(x[floor(0.3length(x))]-0.25dx,
 #  Text Annotation Tests  #
 ###########################
 annotate("Look, data!",
-	xy=[x[floor(length(x)/4.1)];y[floor(length(y)/4.1)]],
-	xytext=[x[floor(length(x)/4.1)]+0.1dx;y[floor(length(y)/4.1)]+0.1dy],
+	xy=[x[convert(Int64,floor(length(x)/4.1))];y[convert(Int64,floor(length(y)/4.1))]],
+	xytext=[x[convert(Int64,floor(length(x)/4.1))]+0.1dx;y[convert(Int64,floor(length(y)/4.1))]+0.1dy],
 	xycoords="data",
 	arrowprops=Dict("facecolor"=>"black")) # Julia dictionary objects are automatically converted to Python object when they pass into a PyPlot function
 annotate("Figure Top Right",

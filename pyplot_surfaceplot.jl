@@ -3,9 +3,9 @@
 #	Surface Plot demonstration
 #
 # Daniel Høegh (https://gist.github.com/dhoegh)
-# Julia 0.4.1
+# Julia 0.5.0
 # 09.12.2014
-# Last Edit: 26.11.15
+# Last Edit: 20.10.16
 
 # Reference: https://groups.google.com/d/msg/julia-users/eVtZdp3htTM/TJOt3exCxKgJ
 
@@ -34,17 +34,17 @@ end
 ##  Plot  ##
 ############
 fig = figure("pyplot_surfaceplot",figsize=(10,10))
-ax = fig[:add_subplot](2,1,1, projection = "3d") 
-ax[:plot_surface](xgrid, ygrid, z, rstride=2,edgecolors="k", cstride=2, cmap=ColorMap("gray"), alpha=0.8, linewidth=0.25) 
-xlabel("X") 
+ax = fig[:add_subplot](2,1,1, projection = "3d")
+ax[:plot_surface](xgrid, ygrid, z, rstride=2,edgecolors="k", cstride=2, cmap=ColorMap("gray"), alpha=0.8, linewidth=0.25)
+xlabel("X")
 ylabel("Y")
 title("Surface Plot")
 
-subplot(212) 
-ax = fig[:add_subplot](2,1,2) 
-cp = ax[:contour](xgrid, ygrid, z, colors="black", linewidth=2.0) 
-ax[:clabel](cp, inline=1, fontsize=10) 
-xlabel("X") 
+subplot(212)
+ax = fig[:add_subplot](2,1,2)
+cp = ax[:contour](xgrid, ygrid, z, colors="black", linewidth=2.0)
+ax[:clabel](cp, inline=1, fontsize=10)
+xlabel("X")
 ylabel("Y")
 title("Contour Plot")
 tight_layout()
