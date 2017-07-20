@@ -3,9 +3,9 @@
 #	Surface Plot demonstration
 #
 # Daniel Høegh (https://gist.github.com/dhoegh)
-# Julia 0.5.0
+# Julia 0.6.0
 # 09.12.2014
-# Last Edit: 20.10.16
+# Last Edit: 20.07.17
 
 # Reference: https://groups.google.com/d/msg/julia-users/eVtZdp3htTM/TJOt3exCxKgJ
 

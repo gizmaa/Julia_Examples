@@ -3,8 +3,8 @@
 #	Demonstrate error bar plots
 #
 # gizmaa (https://gist.github.com/gizmaa/7214002)
-# Julia 0.5.0
-# Last Edit: 20.10.16
+# Julia 0.6.0
+# Last Edit: 20.07.17
 
 using PyPlot
 
@@ -19,7 +19,7 @@ errs = [lowererror;uppererror]
 
 println("From " * string(x[1]) * " to " * string(x[end]))
 
-x = map(Float64,x)/1000/60/60/24 # Convert time from milliseconds from day 0 to days from day 0
+x = Dates.value.(x)/1000/60/60/24 # Convert time from milliseconds from day 0 to days from day 0
 
 ##########
 #  Plot  #

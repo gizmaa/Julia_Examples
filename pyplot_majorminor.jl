@@ -3,9 +3,9 @@
 #	Demonstration of major and minor ticks
 #
 # gizmaa (https://gist.github.com/gizmaa/7214002)
-# Julia 0.5.0
+# Julia 0.6.0
 # 19.12.13
-# Last Edit: 20.10.16
+# Last Edit: 20.07.17
 
 using PyPlot
 
@@ -13,7 +13,7 @@ using PyPlot
 #  Generate Data  #
 ###################
 x = [0.0:0.01:100.0;]
-y = sin(0.1pi*x).*exp(-0.01x)
+y = sin.(0.1pi*x).*exp(-0.01x)
 
 ##########
 #  Plot  #
@@ -46,7 +46,7 @@ ax[:yaxis][:set_minor_locator](my) # Set interval of minor ticks
 #########################
 #  Set tick dimensions  #
 #########################
-ax[:xaxis][:set_tick_params](which="major",length=10,width=2)
+ax[:xaxis][:set_tick_params](which="major",length=10,width=2,labelsize=16)
 ax[:xaxis][:set_tick_params](which="minor",length=5,width=2)
 
 fig[:canvas][:draw]() # Update the figure

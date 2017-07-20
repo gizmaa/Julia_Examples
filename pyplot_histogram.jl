@@ -3,9 +3,9 @@
 #	Demonstrate plotting of histograms
 #
 # gizmaa (https://gist.github.com/gizmaa/7214002)
-# Julia 0.5.0
+# Julia 0.6.0
 # Created: 29.10.13
-# Last Edit: 20.10.16
+# Last Edit: 20.07.17
 
 using PyPlot
 

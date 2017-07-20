@@ -3,9 +3,9 @@
 #	Demonstrate use of multiple overlapping axes
 #
 # gizmaa (https://gist.github.com/gizmaa/7214002)
-# Julia 0.5.0
+# Julia 0.6.0
 # 19.12.13
-# Last Edit: 20.10.16
+# Last Edit: 20.07.17
 
 using PyPlot
 

@@ -3,8 +3,8 @@
 #	Demonstrate plot annotations
 #
 # gizmaa (https://gist.github.com/gizmaa/7214002)
-# Julia 0.5.0
-# Last Edit: 20.10.16
+# Julia 0.6.0
+# Last Edit: 20.07.17
 
 using PyPlot
 
@@ -12,12 +12,12 @@ using PyPlot
 #  Generate an hour of data at 10Hz  #
 ######################################
 x = [DateTime(2013,10,4):Dates.Millisecond(100):DateTime(2013,10,4,1);] # Generate time array
-x = map(Float64,x)/1000/60/60/24 # Convert time from milliseconds from day 0 to days from day 0
-y = sin(2*pi*collect(0:2*pi/length(x):2*pi-(2*pi/length(x))))
+x = Dates.value.(x)/1000/60/60/24 # Convert time from milliseconds from day 0 to days from day 0
+y = sin.(2*pi*collect(0:2*pi/(length(x)+1):2*pi-(2*pi/length(x))))
 dx = maximum(x) - minimum(x)
 dy = maximum(y) - minimum(y)
 
-y2 = 30*(1+sin(2*pi*collect(pi:2*pi/length(x):3*pi-(2*pi/length(x)))))-10
+y2 = 30*(1+sin.(2*pi*collect(pi:2*pi/length(x):3*pi-(2*pi/length(x)))))-10
 x2 = [minimum(x):dx/20:maximum(x);]
 y2 = 10rand(21)-3
 x3 = [minimum(x):dx/20:maximum(x);]
