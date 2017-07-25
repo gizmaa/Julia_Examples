@@ -5,7 +5,7 @@
 # gizmaa (https://gist.github.com/gizmaa/7214002)
 # Julia 0.6.0
 # 19.12.13
-# Last Edit: 20.07.17
+# Last Edit: 25.07.17
 
 using PyPlot
 
@@ -13,7 +13,7 @@ using PyPlot
 #  Generate Data  #
 ###################
 x = [0.0:0.01:100.0;]
-y = sin.(0.1pi*x).*exp(-0.01x)
+y = sin.(0.1pi*x).*exp.(-0.01x)
 
 ##########
 #  Plot  #
