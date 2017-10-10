@@ -5,9 +5,9 @@
 # gizmaa (https://gist.github.com/gizmaa/7214002)
 # Julia 0.6.0
 # Created: 30.10.13
-# Last Edit: 20.07.17
+# Last Edit: 10.10.17
 
-# NOTE: As of Julia 0.5.0 the symbol colors aren't effected by settings
+# NOTE: In Julia 0.5.0 the symbol colors aren't effected by settings
 
 using PyPlot
 
