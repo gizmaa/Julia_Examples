@@ -3,9 +3,9 @@
 #	Demonstrate Quiver Plots
 #
 # gizmaa (https://gist.github.com/gizmaa/7214002)
-# Julia 0.6.0
+# Julia 1.1.0
 # Created: 10.10.17
-# Last Edit: 10.10.17
+# Last Edit: 10.05.19
 
 # http://matplotlib.org/gallery/images_contours_and_fields/quiver_simple_demo.html#sphx-glr-gallery-images-contours-and-fields-quiver-simple-demo-py
 
@@ -20,8 +20,8 @@ using PyPlot
 R = -10:1:9
 X = [R;]'
 Y = [R;]'
-U = repmat([R;]',length(X))
-V = repmat([R;],1,length(Y))
+U = repeat([R;]',length(X))
+V = repeat([R;],1,length(Y))
 
 ###################
 ##  Quiver Plot  ##
@@ -29,5 +29,5 @@ V = repmat([R;],1,length(Y))
 fig = figure("pyplot_quiverplot",figsize=(10,10))
 q = quiver(X,Y,U,V)
 ax = gca()
-ax[:quiverkey](q,X=0.07,Y = 0.05, U = 10,coordinates="figure", label="Quiver key, length = 10",labelpos = "E")
-title("Quiver Plot Example")
+ax.quiverkey(q,X=0.07,Y = 0.05, U = 10,coordinates="figure", label="Quiver key, length = 10",labelpos = "E")
+PyPlot.title("Quiver Plot Example")

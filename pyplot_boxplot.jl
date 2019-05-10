@@ -3,9 +3,9 @@
 #	Box plots demonstrations
 #
 # gizmaa (https://gist.github.com/gizmaa/7214002)
-# Julia 0.6.0
+# Julia 1.1.0
 # Created: 30.10.13
-# Last Edit: 10.10.17
+# Last Edit: 10.05.19
 
 # NOTE: In Julia 0.5.0 the symbol colors aren't effected by settings
 
@@ -20,22 +20,22 @@ using PyPlot
 # Boxes with irregular amounts of data can
 # be plotted by putting the data into bins in an ANY array.
 num = 5
-data = Array{Any}(num) # Preallocate an ANY array for the storage of final values
+data = Array{Any}(undef,num) # Preallocate an ANY array for the storage of final values
 for i=1:1:num
-	num1 = round.(40rand(1)) + 10
+	num1 = round.(40rand(1)) .+ 10
 	num1 = Int(num1[1])
-	num2 = round.(20rand(1)) + 10
+	num2 = round.(20rand(1)) .+ 10
 	num2 = Int(num2[1])
-	num3 = round.(10rand(1)) + 1
+	num3 = round.(10rand(1)) .+ 1
 	num3 = Int(num3[1])
-	num4 = round.(10rand(1)) + 1
+	num4 = round.(10rand(1)) .+ 1
 	num4 = Int(num4[1])
 	
 	spread = 100rand(num1)
 	center = 50rand(num2)
-	flier_high = 100rand(num3) + 100
+	flier_high = 100rand(num3) .+ 100
 	flier_low = -100rand(num4)
-	data[i] = [spread,center,flier_high,flier_low;]
+	data[i] = [spread;center;flier_high;flier_low]
 end
 
 ################

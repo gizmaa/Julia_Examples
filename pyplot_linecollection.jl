@@ -2,9 +2,9 @@
 #
 #   Line Collection plot example
 #
-# Julia 0.6.0
+# Julia 1.1.0
 # 10.06.16
-# Last Edit: 20.07.17
+# Last Edit: 10.05.19
 
 # Reference: David P. Sanders - https://groups.google.com/d/msg/julia-users/BGcEOZVw8YU/Oacy1O5zBQAJ
 
@@ -39,13 +39,13 @@ push!(lines,collect(zip(xs,ys)))
 c = Vector{Int}[[1,0,0],[0,1,0],[0,0,1]]
 
 # Assemble everything into a LineCollection
-line_segments = matplotlib[:collections][:LineCollection](lines,colors=c)
+line_segments = matplotlib.collections.LineCollection(lines,colors=c)
 
 ############
 ##  Plot  ##
 ############
 fig = figure("Line Collection Example",figsize=(10,10))
-ax = axes()
-ax[:add_collection](line_segments)
+ax = PyPlot.axes()
+ax.add_collection(line_segments)
 axis("image")
 axis("tight")

@@ -3,9 +3,9 @@
 #	Demonstrate XKCD style inexact plots
 #
 # gizmaa (https://gist.github.com/gizmaa/7214002)
-# Julia 0.6.0
+# Julia 1.1.0
 # Created: 29.10.13
-# Last Edit: 20.07.17
+# Last Edit: 10.05.19
 
 using PyPlot
 # http://matplotlib.org/examples/showcase/xkcd.html
@@ -24,17 +24,17 @@ end
 ##############
 xkcd() # Set to XKCD mode, based on the comic (hand drawn)
 fig = figure("pyplot_inexact",figsize=(10,10))
-ax = axes()
+ax = PyPlot.axes()
 p = plot(x,y)
-ax[:set_ylim]([0.2;1.1])
+ax.set_ylim([0.2;1.1])
 annotate("THE DAY I REALIZED\nI COULD COOK BACON\nWHENEVER I WANTED",xy=[70;1],arrowprops=Dict("arrowstyle"=>"->"),xytext=[25;0.8])
 
 xticks([])
 yticks([])
 xlabel("TIME")
 ylabel("MY OVERALL HEALTH")
-title("Stove Owndership\nhttp://xkcd.com/418/")
+PyPlot.title("Stove Owndership\nhttp://xkcd.com/418/")
 
-ax[:spines]["top"][:set_color]("none") # Remove the top axis boundary
-ax[:spines]["right"][:set_color]("none") # Remove the right axis boundary
-fig[:canvas][:draw]() # Update the figure
+ax.spines["top"].set_color("none") # Remove the top axis boundary
+ax.spines["right"].set_color("none") # Remove the right axis boundary
+fig.canvas.draw() # Update the figure

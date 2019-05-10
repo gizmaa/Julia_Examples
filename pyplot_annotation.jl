@@ -3,25 +3,26 @@
 #	Demonstrate plot annotations
 #
 # gizmaa (https://gist.github.com/gizmaa/7214002)
-# Julia 0.6.0
-# Last Edit: 20.07.17
+# Julia 1.1.0
+# Last Edit: 10.05.19
 
 using PyPlot
+using Dates
 
 ######################################
 #  Generate an hour of data at 10Hz  #
 ######################################
-x = [DateTime(2013,10,4):Dates.Millisecond(100):DateTime(2013,10,4,1);] # Generate time array
+x = collect(DateTime(2013,10,4):Dates.Millisecond(100):DateTime(2013,10,4,1)) # Generate time array
 x = Dates.value.(x)/1000/60/60/24 # Convert time from milliseconds from day 0 to days from day 0
 y = sin.(2*pi*collect(0:2*pi/(length(x)+1):2*pi-(2*pi/length(x))))
 dx = maximum(x) - minimum(x)
 dy = maximum(y) - minimum(y)
 
-y2 = 30*(1+sin.(2*pi*collect(pi:2*pi/length(x):3*pi-(2*pi/length(x)))))-10
-x2 = [minimum(x):dx/20:maximum(x);]
-y2 = 10rand(21)-3
-x3 = [minimum(x):dx/20:maximum(x);]
-y3 = 10rand(21)-3
+y2 = 30.0*(1.0 .+ sin.(2.0*pi*collect(pi:2.0*pi/length(x):3*pi-(2*pi/length(x))))) .- 10.0
+x2 = collect(minimum(x):dx/20:maximum(x))
+y2 = 10rand(21) .- 3
+x3 = collect(minimum(x):dx/20:maximum(x))
+y3 = 10rand(21) .- 3
 
 ##########
 #  Plot  #
@@ -31,7 +32,7 @@ fig = figure("pyplot_annotation",figsize=(10,10)) # Create a figure and save its
 ax = gca()
 p = plot_date(x,y,linestyle="-",marker="None",label="Test Plot") # Plot a basic line
 axis("tight") # Fit the axis tightly to the plot
-title("U Component of Wind")
+PyPlot.title("U Component of Wind")
 grid("on")
 legend(loc="upper right",fancybox="true") # Create a legend of all the existing plots using their labels as names
 
@@ -44,7 +45,7 @@ font1 = Dict("family"=>"serif",
     "size"=>16)
 xlabel("Time",fontdict=font1)
 ylabel("Velocity (m/s)")
-setp(ax[:get_yticklabels](),fontsize=24,color="blue") # Y Axis font formatting
+setp(ax.get_yticklabels(),fontsize=24,color="blue") # Y Axis font formatting
 
 #################
 #  Arrow Tests  #
@@ -96,5 +97,5 @@ annotate(L"$\int x = \frac{x^2}{2} + C$",
 	ha="right",
 	va="bottom")
 
-fig[:autofmt_xdate](bottom=0.2,rotation=30,ha="right")
-fig[:canvas][:draw]() # Update the figure
+fig.autofmt_xdate(bottom=0.2,rotation=30,ha="right")
+fig.canvas.draw() # Update the figure
