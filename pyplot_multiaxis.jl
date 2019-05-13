@@ -9,9 +9,9 @@
 
 using PyPlot
 
-##################
-#  Make Up Data  #
-##################
+###################
+##  Create Data  ##
+###################
 n = 15 # Number of values
 
 x = collect(1:n)
